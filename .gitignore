@@ -11,4 +11,4 @@ logs/
 *.log
 *.zip
 local_settings.py
-models/
+/models/
