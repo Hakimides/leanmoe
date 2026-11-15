@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "leanmoe"
+version = "0.1.0"
+description = "Zero-vLLM-dependency inference engine for Qwen3-30B-A3B (2xA100, TP2)"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.4",
+    "numpy",
+    "safetensors>=0.4",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+include = ["leanmoe*"]
+
+[tool.setuptools.package-data]
+"leanmoe.distributed" = ["csrc/*.cu"]
